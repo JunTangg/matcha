@@ -12,12 +12,12 @@
 <nav class="navbar navbar-light bg-light">
 
        <a class="navbar-brand" href="{% url 'posts:index' %}">
-       <img src="{% static 'img/matcha.png' %}" width="100" height="30" class="d-inline-block align-top" alt="">
+       <img src="{% static 'posts/img/matcha.png' %}" width="100" height="30" class="d-inline-block align-top" alt="">
        </a>
     <div class="navbar-nav">
     {% if user.is_authenticated %}
         <ul class="nav-right">
-                <a class="navbar-brand" href="#">profile</a>
+                <a class="navbar-brand badge badge-light" href="#">{{user}}님의 profile</a>
                 <a class="navbar-brand" href="{% url 'accounts:logout' %}">logout</a>
         </ul>
     {% else %}
