@@ -35,3 +35,7 @@ def detail(request):
 
 def star(request):
     return render(request, 'posts/star.html')
+
+
+def mypage(request):
+    return render(request, 'posts/mypage.html')
