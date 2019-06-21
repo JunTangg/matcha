@@ -6,27 +6,12 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
-@login_required
 def index(request):
-    user = request.user
-
-    posts = Post.objects.filter(user__in=user.follow.all())
-    comment_form = CommentForm()
-    context = {
-        'posts': posts,
-        'comment_form': comment_form
-    }
-    return render(request, 'posts/index.html', context)
+    return render(request, 'posts/index.html')
 
 
 def all(request):
-    posts = Post.objects.all().order_by('-id')
-    comment_form = CommentForm()
-    context = {
-        'posts': posts,
-        'comment_form': comment_form
-    }
-    return render(request, 'posts/index.html', context)
+    return render(request, 'posts/index.html')
 
 
 def detail(request):
@@ -44,3 +29,6 @@ def mypage(request):
 def lists(request):
     return render(request, 'posts/lists.html')
 
+
+def scroll(request):
+    return render(request, 'posts/scroll.html')
