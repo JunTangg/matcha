@@ -39,3 +39,8 @@ def star(request):
 
 def mypage(request):
     return render(request, 'posts/mypage.html')
+
+
+def lists(request):
+    return render(request, 'posts/lists.html')
+

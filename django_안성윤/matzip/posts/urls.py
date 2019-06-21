@@ -9,6 +9,6 @@ urlpatterns = [
     path('detail/', views.detail, name='detail'),
     path('star/', views.star, name='star'),
     path('mypage/', views.mypage, name='mypage'),
-
+    path('lists/', views.lists, name='lists'),
 ]
 
