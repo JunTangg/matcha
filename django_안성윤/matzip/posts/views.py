@@ -29,8 +29,8 @@ def all(request):
     return render(request, 'posts/index.html', context)
 
 
-def search(request):
-    return render(request, 'posts/search.html')
+def detail(request):
+    return render(request, 'posts/detail.html')
 
 
 def star(request):
