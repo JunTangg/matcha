@@ -32,3 +32,6 @@ def lists(request):
 
 def scroll(request):
     return render(request, 'posts/scroll.html')
+
+
+
