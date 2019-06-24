@@ -36,3 +36,4 @@ def scroll(request):
 
 def fix(request):
     return render(request, 'posts/fix.html')
+
