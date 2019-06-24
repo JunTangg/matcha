@@ -32,3 +32,7 @@ def lists(request):
 
 def scroll(request):
     return render(request, 'posts/scroll.html')
+
+
+def fix(request):
+    return render(request, 'posts/fix.html')
