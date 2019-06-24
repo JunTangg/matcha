@@ -11,6 +11,6 @@ urlpatterns = [
     path('mypage/', views.mypage, name='mypage'),
     path('lists/', views.lists, name='lists'),
     path('scroll/', views.scroll, name='scroll'),
-
+    path('fix/', views.fix, name='fix'),
 ]
 
