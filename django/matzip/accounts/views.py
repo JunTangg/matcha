@@ -12,11 +12,12 @@ def signup(request):
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
-            auth_login(request, user)
-            return redirect('posts:index')
+            auth_login(request, user, backend='django.contrib.auth.backends.ModelBackend')
+            return redirect('posts:personal_info')
     else:
         form = CustomUserCreationForm()
     return render(request, 'accounts/signup.html', {'form':form})
+
 
 
 def login(request):

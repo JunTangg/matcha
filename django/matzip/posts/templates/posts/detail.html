@@ -1,10 +1,11 @@
 {% extends 'posts/base.html' %}
+{% load bootstrap4 %}
 
 {% block body %}
+    <div>{% include 'posts/scroll.html' %}</div>
     <main role="main" class="container d-flex justify-content-center">
       <div class="row">
           <!--음식사진 공간-->
-          <div>{% include 'posts/scroll.html' %}</div>
 
           <!--사진아래 모든 정보-->
           <div class="d-fex flex-column">
@@ -19,26 +20,26 @@
                       <table class="info" >
                           <tbody>
                               <tr>
-                                  <th>식당이름</th>
+                                  <th>{{ group.store_name }}</th>
                                   <td>
-                                      <span> 평균평점 4.0점 / 예상평점 3.8점</span>
+                                      <span> 평균평점 4.0점 </span>
                                   </td>
                               </tr>
 
                               <tr class="only-desktop">
                                   <th>주소</th>
-                                  <td>경기도 성남시 분당구 서현동 247-4</td>
+                                  <td>{{ group.address }}</td>
                               </tr>
 
                               <tr class="only-desktop">
                                   <th>전화번호</th>
-                                  <td>070-8193-2821</td>
+                                  <td>{{ group.biztel }}</td>
                               </tr>
 
                               <tr>
                                   <th>음식 종류</th>
                                   <td>
-                                      <span>돈부리 / 일본 카레 / 벤토</span>
+                                      <span>{{ group.Menu | linebreaksbr }}</span>
                                   </td>
                               </tr>
 
@@ -49,7 +50,7 @@
 
                               <tr>
                                   <th>주차</th>
-                                  <td>주차공간없음 </td>
+                                  <td>{{ group.convenience }} </td>
                               </tr>
 
                               <tr>
@@ -98,11 +99,23 @@
 
 
 
-                  <aside class="col-md-4 blog-sidebar">
+                  <aside class="col-md-5 blog-sidebar p-1 mx-5">
                     <div class="p-5 mb-5 bg-light rounded"> <!--별점평가공간-->
-                     <h4 class="">평가</h4>
-                      <div>{% include 'posts/star.html' %}</div>
+                        <h4 class="">평가</h4>
+                        <div>{% include 'posts/star.html' %}</div>
                     </div>
+
+                    {% if is_rated == 0 %}
+                    <div class="p-5 mb-5 bg-light rounded"> <!--별점평가공간-->
+                        <h4 class="">예상평점</h4>
+                        <div>{{my_rate.est | floatformat:2}}</div>
+                    </div>
+                     {% elif is_rated == 1 %}
+                    <div class="p-5 mb-5 bg-light rounded"> <!--별점평가공간-->
+                        <h4 class="">나의평가</h4>
+                        <div>{{my_rate}}</div>
+                    </div>
+                    {% endif %}
 
                       <!--지도공간-->
                     <div id="map" class="p-5 mb-5 bg-light" style="width:400px;height:300px;">

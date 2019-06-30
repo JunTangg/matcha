@@ -1,5 +1,5 @@
 from django import forms
-from .models import Post, Comment
+from .models import Post, Comment, Star
 
 
 class PostForm(forms.ModelForm):
@@ -14,3 +14,9 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ['content']
+
+
+class StarForm(forms.ModelForm):
+    class Meta:
+        model = Star
+        fields = ['rate']

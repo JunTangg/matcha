@@ -1,5 +1,5 @@
 {% extends 'posts/base.html' %}
-
+{% load socialaccount %}
 {% load bootstrap4 %}
 {% block body %}
     <form action="" method="post">
@@ -7,4 +7,5 @@
         {% bootstrap_form form %}
         <input class='btn btn-outline-primary'type="submit" value="signup">
     </form>
+    <a href="{% provider_login_url 'kakao' %}">카카오 계정으로 로그인</a>
 {% endblock %}

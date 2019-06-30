@@ -5,6 +5,7 @@ from imagekit.models import ProcessedImageField
 from imagekit.processors import ResizeToFill
 
 
+
 class User(AbstractUser):
     follow = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="follower")
     introduce = models.TextField(blank=True)

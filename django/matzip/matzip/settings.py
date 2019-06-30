@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'django_extensions',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,13 +42,12 @@ INSTALLED_APPS = [
     'posts',
     'accounts',
     'bootstrap4',
-
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-
+    'import_export',
     'allauth.socialaccount.providers.kakao',
-
+    'bootstrap_pagination',
 ]
 
 MIDDLEWARE = [
